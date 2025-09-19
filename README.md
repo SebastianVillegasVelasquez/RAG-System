@@ -64,7 +64,7 @@ Inside .env, add the following line and replace your_api_key with your actual Gr
 
 Run the Streamlit app:
 
-`cd src`
+copy and paste the following command in the command line
 
 `streamlit run main.py`
 
