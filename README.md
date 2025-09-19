@@ -57,6 +57,7 @@ Then open the provided local URL in your browser to start chatting with the assi
 ## 📖 Example
 
 User: What is cancer?
+
 Assistant: Cancer is a disease characterized by uncontrolled growth of abnormal cells...
 
 ## 🛠️ Built With
