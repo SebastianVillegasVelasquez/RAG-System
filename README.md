@@ -27,11 +27,11 @@ RagSystem/
 
 Clone the repository and install the dependencies:
 
-`git clone https://github.com/<your-username>/RagSystem.git`
+`git clone https://github.com/<your-username>/RagSystem.git
 cd RagSystem
 python -m venv .venv
 source .venv/bin/activate   # On Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+pip install -r requirements.txt`
 
 ## 🔑 Setup the Project
 
@@ -63,14 +63,19 @@ Assistant: Cancer is a disease characterized by uncontrolled growth of abnormal 
 ## 🛠️ Built With
 
 Python
+
 Streamlit
+
 ChromaDB
+
 LangChain
+
 HuggingFace Embeddings
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
+
 Feel free to open a PR or report a bug.
 
 ## 📜 License
