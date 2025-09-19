@@ -1,7 +1,0 @@
-Technical Requirements
-Before submitting, ensure your project meets these core requirements:
-
-RAG-based AI assistant application - Your system must use Retrieval-Augmented Generation
-Vector database integration - Incorporate a vector store (FAISS, Chroma, or alternatives) for document retrieval
-Document corpus embedding - Embed a collection of documents (Ready Tensor publications, Wikipedia articles, or other permitted sources)
-Working retrieval and response system - Demonstrate functional prompt → retrieval → response pipeline using LangChain
