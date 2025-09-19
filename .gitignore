@@ -1,0 +1,13 @@
+.env
+.venv
+.idea
+__pycache__/
+
+*.log
+*.tmp
+.DS_Store
+
+.streamlit/
+
+.ipynb_checkpoints
+researches
