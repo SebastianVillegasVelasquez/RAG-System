@@ -19,12 +19,19 @@ The system leverages ChromaDB for vector storage, LangChain for orchestration, a
 
 RagSystem/ 
 │── documents/             # Source documents
+
 ├── modules.py             # Helper modules (loading, chunking, embeddings, etc.)
+
 ├── main.py                # Streamlit entry point
+
 │── src/
+
 │   ├── paths.py           # Reusable paths
+
 │── .gitignore             # Files ignored by Git
+
 │── requirements.txt       # Project dependencies
+
 │── README.md
 
 ## ⚙️ Installation
