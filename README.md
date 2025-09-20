@@ -96,15 +96,15 @@ Each document will be automatically loaded, split into chunks, embedded, and sto
 
 ## 🛠️ Built With
 
-Python
+Python - 3.10.3
 
-Streamlit
+Streamlit - 1.49.1
 
-ChromaDB
+ChromaDB - 1.1.0
 
-LangChain
+LangChain - 0.3.27
 
-HuggingFace Embeddings
+HuggingFace Embeddings - 0.3.1
 
 ## 🤝 Contributing
 
