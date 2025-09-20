@@ -19,12 +19,19 @@ The system leverages ChromaDB for vector storage, LangChain for orchestration, a
 
 RagSystem/ 
 │── documents/             # Source documents
+
 ├── modules.py             # Helper modules (loading, chunking, embeddings, etc.)
+
 ├── main.py                # Streamlit entry point
+
 │── src/
+
 │   ├── paths.py           # Reusable paths
+
 │── .gitignore             # Files ignored by Git
+
 │── requirements.txt       # Project dependencies
+
 │── README.md
 
 ## ⚙️ Installation
@@ -57,7 +64,7 @@ Inside .env, add the following line and replace your_api_key with your actual Gr
 
 Run the Streamlit app:
 
-`cd src`
+copy and paste the following command in the command line
 
 `streamlit run main.py`
 
@@ -90,15 +97,15 @@ Each document will be automatically loaded, split into chunks, embedded, and sto
 
 ## 🛠️ Built With
 
-Python
+Python - 3.10.3
 
-Streamlit
+Streamlit - 1.49.1
 
-ChromaDB
+ChromaDB - 1.1.0
 
-LangChain
+LangChain - 0.3.27
 
-HuggingFace Embeddings
+HuggingFace Embeddings - 0.3.1
 
 ## 🤝 Contributing
 
