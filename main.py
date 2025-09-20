@@ -41,7 +41,8 @@ def semantic_search_in_collection(
 
 def generate_answer_from_documents(query: str,
                                    collections: chromadb.Collection,
-                                   llm):
+                                   llm,
+                                   history):
     """
         Generate an AI response based on research documents.
 
@@ -53,6 +54,7 @@ def generate_answer_from_documents(query: str,
             query (str): The researcher's question.
             collections (chromadb.Collection): ChromaDB collection instance.
             llm: Language model instance (e.g., ChatGroq).
+            history: Conversation context from streamlit session
 
         Returns:
             str: AI-generated response based on the retrieved research context.
@@ -63,13 +65,16 @@ def generate_answer_from_documents(query: str,
         for chunk in results["documents"]
     ])
     prompt_template = PromptTemplate(
-        input_variables=["context", "question"],
+        input_variables=["context", "question", "history"],
         template="""
         You are an AI research assistant. 
         Answer the following question based strictly on the research findings provided. 
         Keep your answer clear, concise, and focused on the relevant information. 
         Do not invent information. If the context does not contain enough evidence to 
         answer the question, state that clearly.
+        
+        conversation so far:
+        {history}
         
         Research Context:
         {context}
@@ -81,13 +86,33 @@ def generate_answer_from_documents(query: str,
         """
     )
 
-    prompt = prompt_template.format(context=context, question=query)
+    prompt = prompt_template.format(context=context, question=query, history=history)
     response = llm.invoke(prompt)
 
     return response.content
 
 
 def show_chat_page(llm, collection: chromadb.Collection):
+    """
+           Display a Streamlit-based chat interface for interacting with documents.
+
+           Renders a chat UI where the user can type messages, stores the conversation
+           history in the session state, and generates responses using an LLM and
+           semantic search over a ChromaDB collection.
+
+           Args:
+               llm: Language model instance used to generate responses.
+               collection (chromadb.Collection): ChromaDB collection instance
+                                                 containing the document embeddings.
+
+           Workflow:
+               1. Display chat title.
+               2. Initialize chat history in the session state (if not present).
+               3. Capture user input from chat box.
+               4. Generate AI response using the LLM and document collection.
+               5. Append both user and assistant messages to session history.
+               6. Render the entire conversation in the chat interface.
+       """
     st.title("How can I help you today?")
 
     if "messages" not in st.session_state:
@@ -99,7 +124,8 @@ def show_chat_page(llm, collection: chromadb.Collection):
         response = generate_answer_from_documents(
             query=user_input,
             collections=collection,
-            llm=llm
+            llm=llm,
+            history=st.session_state.messages
         )
 
         st.session_state.messages.append({"role": "assistant", "content": response})

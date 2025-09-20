@@ -64,11 +64,12 @@ Run the Streamlit app:
 
 Then open the provided local URL in your browser to start chatting with the assistant.
 
-## 📖 Example
+### Example Queries
+Here are some questions you can ask the assistant:
 
-User: What is cancer?
-
-Assistant: Cancer is a disease characterized by uncontrolled growth of abnormal cells...
+- What are the early symptoms of cancer?
+- What is the difference between benign and malignant tumors?
+- How does chemotherapy affect cancer cells?
 
 ## Adding Research Documents
 
